@@ -45,6 +45,11 @@ public final class Personnel implements GroupePersonnels,Serializable {
 		return this.Date.toString();
 	}
 	
+	public String GetPost()
+	{
+		return this.Post;
+	}
+	
 	
 	
 	public void serialise(String fileDest)
