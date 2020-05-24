@@ -41,9 +41,9 @@ public class DataBaseDAO {
 		try {
 			Connection conn=DriverManager.getConnection(this.url);
 			Statement statement = conn.createStatement(); 
-			statement.executeQuery("CREATE TABLE PERSONNEL(nom VARCHAR(30),prenom VARCHAR(30),post VARCHAR(30),date VARCHAR(30),tel VARCHAR(30))");
+			statement.executeUpdate("CREATE TABLE PERSONNEL(nom VARCHAR(30),prenom VARCHAR(30),post VARCHAR(30),date VARCHAR(30),tel VARCHAR(30))");
 			
-			statement.executeQuery("CREATE TABLE COMPOSITE(nom VARCHAR(30),prenom VARCHAR(30),id VARCHAR(30))");
+			statement.executeUpdate("CREATE TABLE COMPOSITE(nom VARCHAR(30),prenom VARCHAR(30),id VARCHAR(30))");
 			statement.close();
 			conn.close();
 			

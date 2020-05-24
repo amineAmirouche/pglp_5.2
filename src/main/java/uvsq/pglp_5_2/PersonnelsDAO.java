@@ -56,5 +56,34 @@ public class PersonnelsDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * methode pour afficher tout les personnels existant dans la bd dans la table PERSONNEL
+	 */
+	public void AffichePersonnels()
+	{
+		
+		try {
+			Connection conn=DriverManager.getConnection(this.url);
+			java.sql.Statement statement =conn.createStatement();
+           java.sql.ResultSet resultSet = statement.executeQuery("select * from PERSONNEL");
+
+           while (resultSet.next()){
+               System.out.println("nom: "+resultSet.getString("nom"));
+               System.out.println("prenom: "+resultSet.getString("prenom"));
+               System.out.println("post: "+resultSet.getString("post"));
+               System.out.println("date: "+resultSet.getString("date"));
+               System.out.println("tel: "+resultSet.getString("tel"));
+               
+           }
+           resultSet.close();
+           statement.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
